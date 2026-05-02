@@ -11,8 +11,10 @@ function App() {
     }
 ]);
 
+
   return (
-    <TodoProvider>
+    <TodoProvider value={{todos, addTodo , deleteTodo, toggleCompleted
+    }}>
     <div className="App">
       <div className="bg-gray-100 min-h-screen flex items-center justify-center"> 
       <header className="App-header">
@@ -23,7 +25,7 @@ function App() {
       </header>
       </div>
     </div>
-    </TodoProvider>
+    </TodoProvider> 
   )
 }
 
