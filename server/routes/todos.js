@@ -9,14 +9,14 @@ router.get('/', async (req, res) => {
 })
 
 router.post('/', async (req, res) => {
-  const todo = await Todo.create({ todo: req.body.todo })
+  const todo = await Todo.create({ todo: req.body.todo, description: req.body.description })
   res.status(201).json(todo)
 })
 
 router.put('/:id', async (req, res) => {
   const todo = await Todo.findByIdAndUpdate(
     req.params.id,
-    { todo: req.body.todo, completed: req.body.completed },
+    { todo: req.body.todo, description: req.body.description, completed: req.body.completed },
     { new: true }
   )
   res.json(todo)
